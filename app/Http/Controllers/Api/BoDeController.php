@@ -16,7 +16,7 @@ class BoDeController extends Controller
     public function index()
     {
         //
-        return BoDe::all();
+        return json_decode(BoDe::all());
     }
 
     /**
