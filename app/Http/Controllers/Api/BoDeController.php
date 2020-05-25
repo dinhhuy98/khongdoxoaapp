@@ -39,7 +39,7 @@ class BoDeController extends Controller
     public function show($id)
     {
         //
-        return BoDe::find($id)->cauhoi();
+        return BoDe::find($id)->cauhoi;
     }
 
     /**
