@@ -9,9 +9,9 @@ class BoDeController extends Controller
 {
     //
     public function index(){
-    	$data = BoDe::all();
+    	$data = BoDe::find(1)->cauhoi;
     	foreach ($data as $value) {
-    		echo $value->name."<br>";
+    		echo $value->noidung."<br>";
     	}
     }
 }
