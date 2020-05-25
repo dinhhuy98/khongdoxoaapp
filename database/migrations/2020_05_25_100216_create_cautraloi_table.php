@@ -18,7 +18,7 @@ class CreateCautraloiTable extends Migration
             $table->string('noidung',600);
             $table->boolean('dapandung');
             $table->unsignedBigInteger('id_cauhoi');
-            $table->forign('id_cauhoi')->references('id')->on('cauhoi');
+            $table->foreign('id_cauhoi')->references('id')->on('cauhoi');
             $table->timestamps();
         });
     }
