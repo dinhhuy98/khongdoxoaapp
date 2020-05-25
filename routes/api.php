@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('bode','Api\BoDeController');
+Route::apiResource('cauhoi','Api\CauHoiController');

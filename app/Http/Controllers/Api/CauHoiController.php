@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\CauHoi;
 
 class CauHoiController extends Controller
 {
@@ -37,6 +38,8 @@ class CauHoiController extends Controller
     public function show($id)
     {
         //
+        return CauHoi::find($id)->cautraloi;
+        
     }
 
     /**
