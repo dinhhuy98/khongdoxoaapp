@@ -42,6 +42,9 @@ class BoDeController extends Controller
         //
         $data = BoDe::find($id);
         $data->cauhoi = BoDe::find($id)->cauhoi;
+        foreach ($data->cauhoi as $cauhoi) {
+            $cauhoi->cautraloi = CauHoi::find($cauhoi->id)->cautraloi;
+        }
         return $data;
     }
 
