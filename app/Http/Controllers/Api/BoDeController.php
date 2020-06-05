@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\BoDe;
+use App\CauHoi;
 
 class BoDeController extends Controller
 {
@@ -39,7 +40,9 @@ class BoDeController extends Controller
     public function show($id)
     {
         //
-        return BoDe::find($id)->cauhoi;
+        $data = BoDe::find($id);
+        $data->cauhoi = BoDe::find($id)->cauhoi;
+        return $data;
     }
 
     /**
