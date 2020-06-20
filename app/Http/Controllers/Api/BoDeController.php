@@ -82,7 +82,7 @@ class BoDeController extends Controller
 
     public function capnhat(){
         $cautraloi = CauTraLoi::where('id',61)->update(['dapandung'=>true]);
-        $cautraloi->save();
+        //$cautraloi->save();
 
     }
 }
