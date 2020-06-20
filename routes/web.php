@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('bode','BoDeController@index');
+Route::get('update','Api\BoDeController@capnhat');

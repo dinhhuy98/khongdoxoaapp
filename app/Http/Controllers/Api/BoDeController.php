@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\BoDe;
 use App\CauHoi;
+use App\CauTraLoi;
 
 class BoDeController extends Controller
 {
@@ -77,5 +78,11 @@ class BoDeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function capnhat(){
+        $cautraloi = CauTraLoi::where('id',61)->update(['dapandung'=>true]);
+        $cautraloi->save();
+
     }
 }
