@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
          //$this->call(cautraloide7::class);
          //$this->call(cauhoide8::class);
          //$this->call(cautraloide8::class);
-         $this->call(loaibienbao::class);
+         //$this->call(loaibienbao::class);
+         $this->call(bienbao::class);
     }
 }
