@@ -68,7 +68,7 @@ class BienBaoController extends Controller
         $data = BienBao::where('name','like','%'.$key.'%')->get();
 
         foreach ($data as $bienbao) {
-            $bienbao->loaibienbao = $bienbao->loaibienbao->name;
+            $bienbao->loaibienbao = $bienbao->loaibienbao()->name;
         }
         
         return $data;
