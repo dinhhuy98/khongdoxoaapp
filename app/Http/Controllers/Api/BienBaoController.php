@@ -66,7 +66,7 @@ class BienBaoController extends Controller
     public function search(Request $request){
         echo "LLLL";
         $key = $request->key;
-        $echo $key;
+        echo $key;
         /*
         $data = BienBao::where('name','like','%'.$key.'%');
         foreach ($data as $bienbao) {
