@@ -66,11 +66,11 @@ class BienBaoController extends Controller
     public function search(Request $request){
         $key = $request->key;
         $data = BienBao::where('name','like','%'.$key.'%')->get();
-/*
+
         foreach ($data as $bienbao) {
             $bienbao->loaibienbao = $bienbao->loaibienbao->name;
         }
-        */
+        
         return $data;
         
     }
