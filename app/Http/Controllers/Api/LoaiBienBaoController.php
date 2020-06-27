@@ -40,7 +40,7 @@ class LoaiBienBaoController extends Controller
     {
         //
          $data = LoaiBienBao::find($id);
-        $data->ds_bienbao = LoaiBienBao::find($id)->bienbao();
+        $data->ds_bienbao = LoaiBienBao::find($id)->bienbao;
         return $data;
     }
 
