@@ -64,11 +64,14 @@ class BienBaoController extends Controller
         //
     }
     public function search(Request $request){
-        $key = $request->key;
+        echo "LLLL";
+        //$key = $request->key;
+        /*
         $data = BienBao::where('name','like','%'.$key.'%');
         foreach ($data as $bienbao) {
             $bienbao->loaibienbao = $bienbao->loaibienbao->name;
         }
         return $data;
+        */
     }
 }
