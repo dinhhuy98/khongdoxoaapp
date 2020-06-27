@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('bode','Api\BoDeController');
 Route::apiResource('cauhoi','Api\CauHoiController');
-Route::apiResource('loaibienbao','Api\LoaiBienBao');
+Route::apiResource('loaibienbao','Api\LoaiBienBaoController');

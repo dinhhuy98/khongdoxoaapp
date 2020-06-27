@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\BienBao;
 use App\LoaiBienBao;
 
-class LoaiBienBao extends Controller
+class LoaiBienBaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,7 +39,7 @@ class LoaiBienBao extends Controller
     public function show($id)
     {
         //
-        $data = LoaiBienBao::find($id);
+         $data = LoaiBienBao::find($id);
         $data->ds_bienbao = LoaiBienBao::find($id)->bienbao();
         return $data;
     }
