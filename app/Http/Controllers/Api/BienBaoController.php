@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\BienBao;
+use App\LoaiBienBao;
 
 class BienBaoController extends Controller
 {
