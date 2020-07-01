@@ -17,6 +17,7 @@ class LoaiBienBaoController extends Controller
     public function index()
     {
         //
+        return LoaiBienBao::all();
     }
 
     /**
