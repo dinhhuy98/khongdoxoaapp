@@ -97,4 +97,54 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        
+        // this is where you paste your api key
+var apiKey = "5aba895a0f9d2f612c36d18b16e9d6fcd9cf6f73aafc1704f4c175eaaef69db5";
+var ccStreamer = new WebSocket('wss://streamer.cryptocompare.com/v2?api_key=' + apiKey);
+var config = {
+    "coin":{
+        "ADA":{
+            "minP":1.5,
+            "maxP":1.7,
+            "rangeP":0.05,
+            "preMinP":0,
+            "preMaxP":0
+        }
+    }
+}
+ccStreamer.onopen = function onStreamOpen() {
+    var subRequest = {
+        "action": "SubAdd",
+        "subs": ["0~Coinbase~ADA~USD","0~Coinbase~BTC~USD"]
+    };
+    ccStreamer.send(JSON.stringify(subRequest));
+}
+
+ccStreamer.onmessage = function onStreamMessage(message) {
+    let data = event.data;
+
+    console.log("Received from Cryptocompare: " + data);
+    if(data["TYPE"]=="0"){
+        let p = data["P"];
+        let configCoin = config["coin"][data["FSYM"]];
+        if(p<=(configCoin["preMinP"]-configCoin["rangeP"]) || (configCoin["preMinP"] ==0 && 
+            p<=(configCoin["minP"]+configCoin["rangeP"])
+            )){
+            //push
+            config["coin"][data["preMinP"]] = configCoin["preMinP"]-configCoin["rangeP"];
+        }
+        if(p>=(configCoin["preMinP"]+configCoin["rangeP"]) ){
+            //push
+            config["coin"][data["preMinP"]] = config["coin"][data["minP"]];
+        }
+
+        if(p<=(configCoin["preMinP"]-configCoin["rangeP"]) ){
+            //push
+            config["coin"][data["preMinP"]] = configCoin["preMinP"]-configCoin["rangeP"];
+        }
+        
+    }
+}
+    </script>
 </html>
